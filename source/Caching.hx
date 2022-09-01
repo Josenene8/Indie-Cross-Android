@@ -12,7 +12,7 @@ import sys.thread.Thread;
 
 using StringTools;
 
-#if cpp
+#if windows
 import Discord.DiscordClient;
 #end
 
@@ -47,13 +47,14 @@ class Caching extends MusicBeatState
 
 	function initSettings()
 	{
+		#if windows
 		#if debug
 			debug = true;
 		#end
 
 		FlxG.save.bind(Main.curSave, 'indiecross');
 
-		#if cpp
+		
 		DiscordClient.initialize();
 		#end
 
